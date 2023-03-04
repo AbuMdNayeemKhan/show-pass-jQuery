@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Password</title>
+    <!--====================jQuery CDN START====================-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!--====================jQuery CDN ENDED====================-->
+
+    <!--====================STYLE START HERE START====================-->
+    <style>
+        .input{
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+        .btn{
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+    </style>
+    <!--====================STYLE START HERE ENDED====================-->
+</head>
+<body>
+    <div class="text-wrapper">
+        <input type="password" placeholder="Enter password" class="input">
+        <button class="btn">Show Password</button>
+    </div>
+    <script>
+    $(document).ready(function(){
+    $('.btn').click(function(){
+        var inputfild = $('.input');
+        var inputAttr = inputfild.attr('type');
+        if(inputAttr == 'password'){
+            inputfild.attr('type', 'text');
+            $(this).text('Hide');
+        } else {
+            inputfild.attr('type', 'password');
+            $(this).text('Show');
+        }
+    });
+});
+    </script>
+</body>
+</html>
